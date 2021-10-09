@@ -1,0 +1,51 @@
+/* The default settings for the entire document */
+* {
+    font: normal normal 100%/1.5 sans-serif; /*settings for font*/
+    letter-spacing:.03vw;
+    box-sizing: border-box;
+    background-color: rgb(238, 234, 240);
+    
+}
+
+body section {
+
+    text-align: center;
+
+    font-size: 3.4vh;
+
+    background-color:rgb(185, 192, 207)
+}
+
+header h1 {
+
+    font-size: 5vh;
+
+    font-weight: bold;
+
+    font-variant: small-caps;
+
+    background-color: inherit;
+}
+
+.boxes {
+    border: medium dotted rgb(54, 54, 54);
+}
+
+.quiz-container,
+.timer-container {
+
+    display:flex;
+    flex-flow: row nowrap;
+
+}
+
+button {
+
+    background-color:rgb(153, 233, 187);
+    
+    border-radius: 20%;
+    
+    font-size: 3.5vh;
+
+    font-weight: bolder;
+}

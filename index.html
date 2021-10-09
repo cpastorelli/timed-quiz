@@ -11,34 +11,47 @@
     </head>
 
     <body>
-        <header>
-            <h1>Play a timmed quiz!</h1>
-            <button class="startQuiz">Start!</button>
+        <header >
+
+            <section class="boxes">
+
+                <h1>Play a timmed quiz!</h1>
+                
+                <button class="startQuiz">Start!</button>
+            </section>
+           
         </header>
 
         <hr />
 
         <main>
-            <section id="main-quiz" class="containers">
+            <section class="quiz-container boxes">
 
-                <section class="questions">
-                    
-                    <h3 class="question-prompt"></h3>
+                <section class="question-container">
+
+                    <h3 id="question-prompt"></h3>
                 </section>
 
-                <section class="containers">
+                <section class="answer-container">
 
-                    <h4 class="suggested-answers"></h4>
+                    <button class="suggested-answer" id="option1"></button>
+
+                    <button class="suggested-answer" id="option2"></button>
+
+                    <button class="suggested-answer" id="option3"></button>
+
+                    <button class="suggested-answer" id="option4"></button>
                 </section>
                 
             </section>
 
-            <section id="timer-status" class="timer">
-                <section id="timer" class="timer">
+            <section class="timer-container boxes">
+
+                <section class="timer">
 
                 </section>
 
-                <section id="penalty">
+                <section class="penalty-visual">
 
 
                 </section>
@@ -49,7 +62,7 @@
                 </section>
             </section>
 
-            <section id="section3" class="gameOver">
+            <section class="gameOver boxes">
 
 
             </section>
