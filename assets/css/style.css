@@ -34,7 +34,9 @@ header h1 {
 .quiz-container,
 .timer-container {
 
+
     display:flex;
+
     flex-flow: row nowrap;
 
 }
@@ -48,4 +50,10 @@ button {
     font-size: 3.5vh;
 
     font-weight: bolder;
+}
+
+
+.gameOver {
+    display: none;
+
 }
