@@ -1,50 +1,76 @@
 /* The default settings for the entire document */
 * {
-    font: normal normal 100%/1.5 sans-serif; /*settings for font*/
-    letter-spacing:.03vw;
-    box-sizing: border-box;
-    background-color: rgb(238, 234, 240);
-    
-}
 
-body section {
+    font: normal normal 100%/1.5 sans-serif; /*settings for font*/
 
     text-align: center;
 
-    font-size: 3.4vh;
+    letter-spacing:.03vw;
+    
+    box-sizing: border-box;
 
-    background-color:rgb(185, 192, 207)
+    background-color: rgb(238, 234, 240);   
 }
 
+/*aligning text to center, background-color is an off-purple, margin on all sides, overflow set to hidden  */
+body section {
+
+    font-size: 3.4vh;
+
+    background-color:rgb(185, 192, 207);
+
+    margin: 2vh;
+
+    overflow: hidden;
+}
+
+/* Font size, weight set to bold, variant set to small capitalization, background is inherited from body section*/
 header h1 {
 
-    font-size: 5vh;
+    font-size: 4.5vh;
 
     font-weight: bold;
 
     font-variant: small-caps;
 
     background-color: inherit;
+
+    margin: 0;
 }
 
+/* create border around the class called boxes  */
 .boxes {
-    border: medium dotted rgb(54, 54, 54);
+
+    border: medium dotted rgb(54, 54, 54); 
 }
 
+/* allow children of class main to be flex items */
+.main,
+.answer-cnotainer {
+
+    display: flex;
+}
+
+/* main containers within  */
 .quiz-container,
 .timer-container {
 
-
-    display:flex;
+    width: 50vw;
 
     flex-flow: row nowrap;
 
+    align-items: center; 
+}
+
+/* header elements within quiz container class for background color */
+.quiz-container h3,
+.quiz-container h5{
+
+    background-color: inherit;
 }
 
 button {
 
-    background-color:rgb(153, 233, 187);
-    
     border-radius: 20%;
     
     font-size: 3.5vh;
@@ -52,8 +78,52 @@ button {
     font-weight: bolder;
 }
 
+.startQuizbtn {
+
+    background-color:rgb(153, 233, 187);
+}
+
+.choiceBtn {
+
+    background-color: rgb(255, 255, 255);
+}
 
 .gameOver {
-    display: none;
 
+    display: none;
+}
+
+.timer-count {
+
+    color:white;
+
+    font-size: 5vh;
+
+    font-weight: bold;
+
+    border: solid black;
+
+    background-color:blue;
+
+    width: 100%;  
+}
+
+
+.scorecard {
+
+    width:100%;  
+}
+
+.scorecard h2 {
+
+    background-color: inherit;
+
+    font-size: 3.5vh;
+
+    font-weight: bold;
+}
+
+.scorecard span {
+
+    background-color: inherit;
 }

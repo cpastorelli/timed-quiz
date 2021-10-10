@@ -4,10 +4,17 @@
 
     <head>
         <meta charset="UTF-8" />
+
         <title>Timmed Quizes!</title>
+
         <link rel="icon" href= "./assets/images/timer.ico" />
+
         <link rel="stylesheet" href="./assets/css/style.css" />
+
         <meta name="viewport" content="width= device-width, initial-scale=1.0" />
+        
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     </head>
 
     <body>
@@ -15,62 +22,56 @@
 
             <section class="boxes">
 
-                <h1>Play a timmed quiz!</h1>
+                <h1>Play a timed quiz!</h1>
 
-                <button id="beginQuiz">Start!</button>
+                <button class="startQuizbtn" onclick="startQuiz()">Start!</button>
             </section>
            
         </header>
 
         <hr />
 
-        <main>
+        <main class="main">
             <section class="quiz-container boxes">
 
-                <section class="question-container">
-
-                    <h3 id="question-prompt"></h3>
+                <section class="question-container  ">
+                <h3 class="showQ">Pending Questions</h3>
                 </section>
 
-                <section class="answer-container">
-
-                    <button class="suggested-answer" id="option1"></button>
-
-                    <button class="suggested-answer" id="option2"></button>
-
-                    <button class="suggested-answer" id="option3"></button>
-
-                    <button class="suggested-answer" id="option4"></button>
-                </section>
+                <section id="choices" class="answer-container showA">
+                    <!-- <h5 class ="showA gameEnd">Pending Answers</h5> -->
+                    
+                    <button id="btn1" class="choiceBtn"><span id="choice0"></span></button>
+                    <button id="btn2" class="choiceBtn"><span id="choice1"></span></button>
+                    <button id="btn3" class="choiceBtn"><span id="choice2"></span></button>
+                    <button id="btn4" class="choiceBtn"><span id="choice3"></span></button>
                 
+                </section>
             </section>
 
             <section class="timer-container boxes">
 
-                <section class="timer">
-
+                <section class="timer-count">10
                 </section>
 
                 <section class="penalty-visual">
-
-
                 </section>
 
                 <section class="scorecard">
+                    <h2>Wins: <span class="win"> 0 </span> </h2>
 
-
+                    <h2>Losses: <span class="lose">0</span></h2>
                 </section>
+ 
             </section>
 
             <section class="gameOver">
-
-
             </section>
-
-            
-            <hr />
-
-
+  
         </main>
+
+        <script src="./assets/js/script.js"></script>
+        <script src="./assets/js/questions.js"></script>
     </body>
+    
 </html>
