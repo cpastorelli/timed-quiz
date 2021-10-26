@@ -1,24 +1,23 @@
 
-var questionPrompt = document.querySelector(".showQ");
-var answerPrompt = document.querySelector(".showA");
-var showGameOver = document.querySelector(".gameEnd");
-var timerEl= document.querySelector(".timer-count");
-var loss = document.querySelector(".lose");
-var win = document.querySelector(".win");
+// var questionPrompt = document.querySelector(".showQ");
+// var answerPrompt = document.querySelector(".showA");
+// var showGameOver = document.querySelector(".gameEnd");
+ var timerEl= document.querySelector(".timer-count");
+// var loss = document.querySelector(".lose");
+// var win = document.querySelector(".win");
 
 
-var quizScore = 0;
-var timerCount = 30;
-var winCount = 0;
-var lossCount = 0;
-var isWinner = false;
-var timerCount;
-var timer;
+// var quizScore = 0;
+ var timerCount;
+// var winCount = 0;
+ var lossCount = 0;
+ var isWinner = false;
+ var timer;
 
 
-var userInitial = localStorage.getItem("userInitial");
+// var userInitial = localStorage.getItem("userInitial");
 
-var questions;
+// var questions;
 
 
 function startQuiz(){
@@ -26,9 +25,9 @@ function startQuiz(){
     
     timerCount = 10;
     
-    document.addEventListener("DOMContentLoaded", function(event) {
-        document.getElementById("startQuizButton").disabled = true;
-      });
+    // document.addEventListener("DOMContentLoaded", function(event) {
+    //     document.getElementById("startQuizButton").disabled = true;
+    //   });
 
     startTimer();
     //showQuestions(0);
@@ -70,16 +69,35 @@ function startQuiz(){
 
 // }
 
+function populate() {
+
+    if (quiz_box.isEnded()) {
+
+        showScore();
+
+    } else {
+        var questionEl = document.querySelector(".showQ");
+        questionEl.innerHTML = quiz.getQuestionIndex().text;
+        var ansChoices = quiz.getQuestionIndex().answerChoices;
+        for (var i = 0; i < answerChoices.length; i++) {
+            var answerEl = document.getElementById("choice" + i);
+            answerEl.innerHTML = answerChoices[i];
+            guess("btn" + i, answerChoices[i])
+        }
+        showProgress();
+    }
+}
+
+
 function startTimer() {
    console.log("Start Timer has begun.");
-    timer = setInterval( function() {
+    timer = setInterval(function() {
         
         timerCount--;
-        console.log("TimerCount decreased by a second");
         
         timerEl.textContent = timerCount;
 
-        if(timerCount>= 0) {
+        if(timerCount >= 0) {
 
             if(isWinner && timerCount > 0)
             {
@@ -90,7 +108,6 @@ function startTimer() {
         }
          
         if(timerCount === 0) {
-            console.log("timer is now zero");
             clearInterval(timer);
             gameLose();
         }
@@ -149,12 +166,12 @@ function gameWin(){
 
 function gameLose(){
 
-    console.log("you lose!")
+    console.log("you lost!")
 
-    document.addEventListener("DOMContentLoaded", function(event) {
+    // document.addEventListener("DOMContentLoaded", function(event) {
 
-        document.getElementById("startQuizButton").disabled = false;
-      });
+    //     document.getElementById("startQuizButton").disabled = false;
+    //   });
 
     lossCount++;
 
